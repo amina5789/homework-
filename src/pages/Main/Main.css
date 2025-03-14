@@ -1,0 +1,17 @@
+.main-heading {
+    margin-bottom: 50px;
+}
+.products-list {
+    display: flex;
+   gap: 20px;
+}
+
+.product-card{
+    display: flex;
+ border-radius: 16px;
+ padding: 16px;
+ flex-direction: column;
+ gap: 15px;
+ width: 200px;
+ border: 1px solid  lightblue;
+}

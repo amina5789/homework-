@@ -1,0 +1,12 @@
+.new-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+    height: 550px;
+}
+
+.empty-heading{
+    text-align: center;
+    
+}
