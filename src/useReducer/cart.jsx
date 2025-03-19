@@ -10,7 +10,7 @@ const Cart = () => {
         dispatch(fetchCart());
     }, [dispatch]);
 
-    // Пагинация
+    
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 3;
     const indexOfLastItem = currentPage * itemsPerPage;
@@ -32,7 +32,6 @@ const Cart = () => {
                         </div>
                     ))}
 
-                    {/* Пагинация */}
                     <div>
                         <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                                 disabled={currentPage === 1}>

@@ -1,9 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// 🔹 URL сервера JSON
 const API_URL = "http://localhost:5000";
 
-// 🔹 Асинхронная загрузка списка товаров
 export const fetchProducts = createAsyncThunk("products/fetchProducts", async () => {
     const response = await fetch(`${API_URL}/products`);
     return response.json();

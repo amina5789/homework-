@@ -1,15 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// 🔹 URL сервера JSON
 const API_URL = "http://localhost:5000";
 
-// 🔹 Асинхронное получение корзины
 export const fetchCart = createAsyncThunk("cart/fetchCart", async () => {
     const response = await fetch(`${API_URL}/cart`);
     return response.json();
 });
 
-// 🔹 Асинхронное добавление товара в корзину
 export const addToCartAsync = createAsyncThunk("cart/addToCart", async (product) => {
     const response = await fetch(`${API_URL}/cart`, {
         method: "POST",
@@ -19,25 +16,22 @@ export const addToCartAsync = createAsyncThunk("cart/addToCart", async (product)
     return response.json();
 });
 
-// 🔹 Асинхронное удаление товара
 export const removeFromCartAsync = createAsyncThunk("cart/removeFromCart", async (id) => {
     await fetch(`${API_URL}/cart/${id}`, { method: "DELETE" });
     return id;
 });
 
-// 🔹 Очистка корзины
 export const clearCartAsync = createAsyncThunk("cart/clearCart", async () => {
     await fetch(`${API_URL}/cart`, { method: "DELETE" });
     return [];
 });
 
-// 🔹 Slice
 const cartSlice = createSlice({
     name: "cart",
     initialState: {
-        products: [], // Теперь продукты загружаются с сервера
+        products: [], 
         cart: [],
-        status: "idle", // Для обработки состояний загрузки
+        status: "idle", 
         error: null
     },
     reducers: {},
